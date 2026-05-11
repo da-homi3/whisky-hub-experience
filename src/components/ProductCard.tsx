@@ -3,6 +3,7 @@ import { Heart, Plus, Star } from "lucide-react";
 import { useState } from "react";
 import { useCart } from "@/lib/store";
 import { formatKES, type Product } from "@/lib/products";
+import { productImages } from "@/lib/productImages";
 
 export function ProductCard({ product }: { product: Product }) {
   const add = useCart((s) => s.add);
@@ -42,14 +43,25 @@ export function ProductCard({ product }: { product: Product }) {
       </button>
 
       <div className="aspect-square bg-gradient-dark flex items-center justify-center overflow-hidden relative">
-        <motion.div
-          whileHover={{ scale: 1.15, rotate: -8 }}
-          transition={{ type: "spring", stiffness: 200 }}
-          className="text-8xl drop-shadow-2xl"
-        >
-          {product.emoji}
-        </motion.div>
-        <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
+        {productImages[product.id] ? (
+          <motion.img
+            src={productImages[product.id]}
+            alt={product.name}
+            loading="lazy"
+            whileHover={{ scale: 1.08, rotate: -2 }}
+            transition={{ type: "spring", stiffness: 200 }}
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <motion.div
+            whileHover={{ scale: 1.15, rotate: -8 }}
+            transition={{ type: "spring", stiffness: 200 }}
+            className="text-8xl drop-shadow-2xl"
+          >
+            {product.emoji}
+          </motion.div>
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-card/80 via-transparent to-transparent pointer-events-none" />
         <div className="absolute -bottom-px left-0 right-0 h-px bg-gradient-to-r from-transparent via-[var(--gold)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
       </div>
 
