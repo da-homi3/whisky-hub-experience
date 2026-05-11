@@ -76,14 +76,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Whisky Hub Rongai — Premium Liquor Delivery in Nairobi" },
+      { name: "description", content: "Rongai's premium liquor store. Whisky, wines, vodka, gin, champagne & more delivered same-day across Nairobi. Order via WhatsApp." },
+      { name: "author", content: "Whisky Hub Rongai" },
+      { property: "og:title", content: "Whisky Hub Rongai — Premium Liquor Delivery" },
+      { property: "og:description", content: "Premium spirits, wines & local favourites delivered across Nairobi." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       {
