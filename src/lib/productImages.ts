@@ -6,7 +6,10 @@ const modules = import.meta.glob("@/assets/products/*.{jpg,png}", {
 
 export const productImages: Record<string, string> = Object.fromEntries(
   Object.entries(modules).map(([path, url]) => {
-    const id = path.split("/").pop()!.replace(/\.(jpg|png)$/, "");
+    const id = path
+      .split("/")
+      .pop()!
+      .replace(/\.(jpg|png)$/, "");
     return [id, url];
-  })
+  }),
 );

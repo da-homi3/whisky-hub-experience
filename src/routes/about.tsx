@@ -21,25 +21,35 @@ function AboutPage() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-14"
         >
-          <p className="text-xs uppercase tracking-[0.3em] text-[var(--gold)] mb-2">
-            Our Story
-          </p>
+          <p className="text-xs uppercase tracking-[0.3em] text-[var(--gold)] mb-2">Our Story</p>
           <h1 className="font-display text-4xl md:text-6xl font-bold mb-6">
             Crafted for the <span className="text-gradient-gold">Connoisseur</span>
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Born in the heart of Rongai, Whisky Hub is more than a liquor store — it's a
-            curation of the world's finest spirits, paired with the best of Kenya's local
-            heritage. From the rare single malts of Scotland to the crisp local lagers
-            we love, every bottle is hand-picked for quality.
+            Born in the heart of Rongai, Whisky Hub is more than a liquor store — it's a curation of
+            the world's finest spirits, paired with the best of Kenya's local heritage. From the
+            rare single malts of Scotland to the crisp local lagers we love, every bottle is
+            hand-picked for quality.
           </p>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-5">
           {[
-            { icon: Award, title: "100% Authentic", desc: "Sourced directly from licensed distributors." },
-            { icon: Truck, title: "Lightning Fast", desc: "Same-day delivery across Nairobi metro." },
-            { icon: Heart, title: "Locally Loved", desc: "Trusted by thousands in Rongai & beyond." },
+            {
+              icon: Award,
+              title: "100% Authentic",
+              desc: "Sourced directly from licensed distributors.",
+            },
+            {
+              icon: Truck,
+              title: "Lightning Fast",
+              desc: "Same-day delivery across Nairobi metro.",
+            },
+            {
+              icon: Heart,
+              title: "Locally Loved",
+              desc: "Trusted by thousands in Rongai & beyond.",
+            },
           ].map((v, i) => (
             <motion.div
               key={v.title}

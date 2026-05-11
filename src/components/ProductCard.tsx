@@ -15,10 +15,7 @@ export function ProductCard({ product }: { product: Product }) {
     : null;
 
   return (
-    <motion.div
-      whileHover={{ y: -8 }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
-    >
+    <motion.div whileHover={{ y: -8 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}>
       <Link
         to="/product/$productId"
         params={{ productId: product.id }}

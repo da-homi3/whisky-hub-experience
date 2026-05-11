@@ -38,15 +38,13 @@ export function Footer() {
         <div>
           <h4 className="font-display text-base font-semibold mb-4">Shop</h4>
           <ul className="space-y-2 text-sm text-muted-foreground">
-            {["Whisky", "Wines", "Vodka", "Gin", "Champagne", "Kenyan Favorites"].map(
-              (c) => (
-                <li key={c}>
-                  <Link to="/shop" className="hover:text-[var(--gold)] transition-colors">
-                    {c}
-                  </Link>
-                </li>
-              )
-            )}
+            {["Whisky", "Wines", "Vodka", "Gin", "Champagne", "Kenyan Favorites"].map((c) => (
+              <li key={c}>
+                <Link to="/shop" className="hover:text-[var(--gold)] transition-colors">
+                  {c}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
@@ -70,20 +68,13 @@ export function Footer() {
               </a>
             </li>
           </ul>
-          <p className="text-xs text-muted-foreground mt-4">
-            Open daily · 10:00 AM – 11:00 PM
-          </p>
+          <p className="text-xs text-muted-foreground mt-4">Open daily · 10:00 AM – 11:00 PM</p>
         </div>
 
         <div>
           <h4 className="font-display text-base font-semibold mb-4">Newsletter</h4>
-          <p className="text-sm text-muted-foreground mb-3">
-            Weekly deals and exclusive drops.
-          </p>
-          <form
-            onSubmit={(e) => e.preventDefault()}
-            className="flex gap-2"
-          >
+          <p className="text-sm text-muted-foreground mb-3">Weekly deals and exclusive drops.</p>
+          <form onSubmit={(e) => e.preventDefault()} className="flex gap-2">
             <input
               type="email"
               placeholder="your@email.com"
@@ -99,9 +90,7 @@ export function Footer() {
       <div className="border-t border-border">
         <div className="container mx-auto px-4 lg:px-8 py-5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
           <p>© {new Date().getFullYear()} Whisky Hub Rongai. All rights reserved.</p>
-          <p className="text-[var(--amber)] font-medium">
-            🔞 Drink Responsibly · Strictly 18+
-          </p>
+          <p className="text-[var(--amber)] font-medium">🔞 Drink Responsibly · Strictly 18+</p>
         </div>
       </div>
     </footer>

@@ -21,9 +21,7 @@ function ContactPage() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
         >
-          <p className="text-xs uppercase tracking-[0.3em] text-[var(--gold)] mb-2">
-            Get in touch
-          </p>
+          <p className="text-xs uppercase tracking-[0.3em] text-[var(--gold)] mb-2">Get in touch</p>
           <h1 className="font-display text-4xl md:text-5xl font-bold">
             Reach <span className="text-gradient-gold">Whisky Hub</span>
           </h1>
@@ -33,7 +31,11 @@ function ContactPage() {
           {[
             { icon: MapPin, title: "Visit Us", text: "Magadi Road, Rongai\nNairobi, Kenya" },
             { icon: Phone, title: "Call", text: "+254 700 000 000" },
-            { icon: MessageCircle, title: "WhatsApp", text: "Order in seconds — tap the floating button" },
+            {
+              icon: MessageCircle,
+              title: "WhatsApp",
+              text: "Order in seconds — tap the floating button",
+            },
             { icon: Clock, title: "Hours", text: "Daily · 10:00 AM – 11:00 PM" },
           ].map((c, i) => (
             <motion.div
@@ -49,9 +51,7 @@ function ContactPage() {
               </div>
               <div>
                 <h3 className="font-display text-lg font-bold">{c.title}</h3>
-                <p className="text-sm text-muted-foreground whitespace-pre-line mt-1">
-                  {c.text}
-                </p>
+                <p className="text-sm text-muted-foreground whitespace-pre-line mt-1">{c.text}</p>
               </div>
             </motion.div>
           ))}

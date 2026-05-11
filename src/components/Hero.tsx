@@ -80,8 +80,8 @@ export function Hero() {
             transition={{ delay: 0.5 }}
             className="text-lg text-muted-foreground max-w-lg leading-relaxed"
           >
-            From rare single malts to local favourites — handpicked spirits, wines and
-            beers delivered to your doorstep across Nairobi.
+            From rare single malts to local favourites — handpicked spirits, wines and beers
+            delivered to your doorstep across Nairobi.
           </motion.p>
 
           <motion.div
@@ -126,12 +126,8 @@ export function Hero() {
               { n: "4.9★", l: "Customer Rating" },
             ].map((s) => (
               <div key={s.l}>
-                <div className="font-display text-2xl font-bold text-gradient-gold">
-                  {s.n}
-                </div>
-                <div className="text-xs uppercase tracking-wider text-muted-foreground">
-                  {s.l}
-                </div>
+                <div className="font-display text-2xl font-bold text-gradient-gold">{s.n}</div>
+                <div className="text-xs uppercase tracking-wider text-muted-foreground">{s.l}</div>
               </div>
             ))}
           </motion.div>

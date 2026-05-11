@@ -10,17 +10,12 @@ export function FeaturedProducts() {
     <section className="container mx-auto px-4 lg:px-8 py-16">
       <div className="flex items-end justify-between mb-10">
         <div>
-          <p className="text-xs uppercase tracking-[0.3em] text-[var(--gold)] mb-2">
-            Top picks
-          </p>
+          <p className="text-xs uppercase tracking-[0.3em] text-[var(--gold)] mb-2">Top picks</p>
           <h2 className="font-display text-3xl md:text-4xl font-bold">
             Featured <span className="text-gradient-gold">Bottles</span>
           </h2>
         </div>
-        <Link
-          to="/shop"
-          className="text-sm text-muted-foreground hover:text-[var(--gold)]"
-        >
+        <Link to="/shop" className="text-sm text-muted-foreground hover:text-[var(--gold)]">
           View all →
         </Link>
       </div>

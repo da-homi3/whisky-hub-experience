@@ -9,7 +9,11 @@ export const Route = createFileRoute("/shop")({
   head: () => ({
     meta: [
       { title: "Shop — Whisky Hub Rongai" },
-      { name: "description", content: "Browse our full catalogue: whisky, vodka, gin, wine, champagne, beer & Kenyan favourites." },
+      {
+        name: "description",
+        content:
+          "Browse our full catalogue: whisky, vodka, gin, wine, champagne, beer & Kenyan favourites.",
+      },
     ],
   }),
   component: ShopPage,
@@ -23,8 +27,7 @@ function ShopPage() {
   const filtered = useMemo(() => {
     let list = products.filter(
       (p) =>
-        (cat === "All" || p.category === cat) &&
-        p.name.toLowerCase().includes(q.toLowerCase())
+        (cat === "All" || p.category === cat) && p.name.toLowerCase().includes(q.toLowerCase()),
     );
     if (sort === "low") list = [...list].sort((a, b) => a.price - b.price);
     if (sort === "high") list = [...list].sort((a, b) => b.price - a.price);
@@ -40,15 +43,11 @@ function ShopPage() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-10"
         >
-          <p className="text-xs uppercase tracking-[0.3em] text-[var(--gold)] mb-2">
-            Catalogue
-          </p>
+          <p className="text-xs uppercase tracking-[0.3em] text-[var(--gold)] mb-2">Catalogue</p>
           <h1 className="font-display text-4xl md:text-5xl font-bold">
             The <span className="text-gradient-gold">Collection</span>
           </h1>
-          <p className="text-muted-foreground mt-3">
-            {filtered.length} products available
-          </p>
+          <p className="text-muted-foreground mt-3">{filtered.length} products available</p>
         </motion.div>
 
         <div className="flex flex-col lg:flex-row gap-3 mb-8">

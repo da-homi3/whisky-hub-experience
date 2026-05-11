@@ -23,9 +23,7 @@ export const useCart = create<CartState>()(
           const existing = s.items.find((i) => i.id === p.id);
           if (existing) {
             return {
-              items: s.items.map((i) =>
-                i.id === p.id ? { ...i, qty: i.qty + 1 } : i
-              ),
+              items: s.items.map((i) => (i.id === p.id ? { ...i, qty: i.qty + 1 } : i)),
             };
           }
           return { items: [...s.items, { ...p, qty: 1 }] };
@@ -33,16 +31,17 @@ export const useCart = create<CartState>()(
       remove: (id) => set((s) => ({ items: s.items.filter((i) => i.id !== id) })),
       setQty: (id, qty) =>
         set((s) => ({
-          items: qty <= 0
-            ? s.items.filter((i) => i.id !== id)
-            : s.items.map((i) => (i.id === id ? { ...i, qty } : i)),
+          items:
+            qty <= 0
+              ? s.items.filter((i) => i.id !== id)
+              : s.items.map((i) => (i.id === id ? { ...i, qty } : i)),
         })),
       clear: () => set({ items: [] }),
       count: () => get().items.reduce((s, i) => s + i.qty, 0),
       total: () => get().items.reduce((s, i) => s + i.qty * i.price, 0),
     }),
-    { name: "whr-cart" }
-  )
+    { name: "whr-cart" },
+  ),
 );
 
 type ThemeState = {

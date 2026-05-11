@@ -39,7 +39,10 @@ function ProductDetails() {
   return (
     <div className="pt-28 pb-16 min-h-screen">
       <div className="container mx-auto px-4 lg:px-8">
-        <Link to="/shop" className="inline-flex items-center gap-2 text-muted-foreground hover:text-[var(--gold)] transition-colors mb-8">
+        <Link
+          to="/shop"
+          className="inline-flex items-center gap-2 text-muted-foreground hover:text-[var(--gold)] transition-colors mb-8"
+        >
           <ArrowLeft className="w-4 h-4" /> Back to Shop
         </Link>
 
@@ -63,7 +66,7 @@ function ProductDetails() {
                 {product.emoji}
               </motion.div>
             )}
-            
+
             {product.badge && (
               <div className="absolute top-6 left-6 px-3 py-1.5 rounded-full bg-gradient-gold text-background text-xs font-bold uppercase tracking-wider">
                 {product.badge}
@@ -80,14 +83,21 @@ function ProductDetails() {
           <div className="flex flex-col justify-center space-y-6">
             <div>
               <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
-                <span className="text-[var(--gold)] uppercase tracking-wider font-semibold">{product.category}</span>
+                <span className="text-[var(--gold)] uppercase tracking-wider font-semibold">
+                  {product.category}
+                </span>
                 <span>•</span>
-                <span className="flex items-center gap-1"><Star className="w-4 h-4 fill-[var(--gold)] text-[var(--gold)]" /> {product.rating} Rating</span>
+                <span className="flex items-center gap-1">
+                  <Star className="w-4 h-4 fill-[var(--gold)] text-[var(--gold)]" />{" "}
+                  {product.rating} Rating
+                </span>
                 <span>•</span>
                 <span>{product.size}</span>
               </div>
-              <h1 className="text-4xl md:text-5xl font-display font-bold leading-tight mb-4">{product.name}</h1>
-              
+              <h1 className="text-4xl md:text-5xl font-display font-bold leading-tight mb-4">
+                {product.name}
+              </h1>
+
               <div className="flex items-end gap-4 mb-6">
                 <div className="font-display text-4xl font-bold text-gradient-gold">
                   {formatKES(product.price)}
@@ -101,7 +111,9 @@ function ProductDetails() {
             </div>
 
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Experience the exceptional quality of {product.name}. Carefully crafted to deliver a unique tasting experience, this {product.size} bottle is perfect for your collection or as a premium gift.
+              Experience the exceptional quality of {product.name}. Carefully crafted to deliver a
+              unique tasting experience, this {product.size} bottle is perfect for your collection
+              or as a premium gift.
             </p>
 
             <div className="flex gap-4 pt-4 border-t border-border">
@@ -115,7 +127,9 @@ function ProductDetails() {
                 onClick={() => setFav(!fav)}
                 className={`w-16 h-[60px] rounded-xl border border-border flex items-center justify-center transition-colors ${fav ? "bg-[var(--amber)]/10 border-[var(--amber)]" : "bg-card hover:border-[var(--gold)]"}`}
               >
-                <Heart className={`w-6 h-6 transition-colors ${fav ? "fill-[var(--amber)] text-[var(--amber)]" : "text-foreground"}`} />
+                <Heart
+                  className={`w-6 h-6 transition-colors ${fav ? "fill-[var(--amber)] text-[var(--amber)]" : "text-foreground"}`}
+                />
               </button>
             </div>
           </div>

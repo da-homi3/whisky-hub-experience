@@ -32,9 +32,7 @@ export function PartyPackages() {
   return (
     <section className="container mx-auto px-4 lg:px-8 py-16">
       <div className="text-center mb-12">
-        <p className="text-xs uppercase tracking-[0.3em] text-[var(--gold)] mb-2">
-          Bundles
-        </p>
+        <p className="text-xs uppercase tracking-[0.3em] text-[var(--gold)] mb-2">Bundles</p>
         <h2 className="font-display text-3xl md:text-4xl font-bold">
           Party <span className="text-gradient-gold">Packages</span>
         </h2>
@@ -59,9 +57,7 @@ export function PartyPackages() {
               <p.icon className="w-6 h-6" />
             </div>
             <h3 className="font-display text-xl font-bold mb-2">{p.title}</h3>
-            <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-              {p.desc}
-            </p>
+            <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{p.desc}</p>
             <div className="text-gradient-gold font-display text-2xl font-bold">
               From KES {p.price.toLocaleString()}
             </div>
