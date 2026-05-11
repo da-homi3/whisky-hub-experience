@@ -79,10 +79,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Whisky Hub Rongai — Premium Liquor Delivery in Nairobi" },
       { name: "description", content: "Rongai's premium liquor store. Whisky, wines, vodka, gin, champagne & more delivered same-day across Nairobi. Order via WhatsApp." },
       { name: "author", content: "Whisky Hub Rongai" },
-      { property: "og:title", content: "Whisky Hub Rongai — Premium Liquor Delivery" },
-      { property: "og:description", content: "Premium spirits, wines & local favourites delivered across Nairobi." },
+      { property: "og:title", content: "Whisky Hub Rongai — Premium Liquor Delivery in Nairobi" },
+      { property: "og:description", content: "Rongai's premium liquor store. Whisky, wines, vodka, gin, champagne & more delivered same-day across Nairobi. Order via WhatsApp." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Whisky Hub Rongai — Premium Liquor Delivery in Nairobi" },
+      { name: "twitter:description", content: "Rongai's premium liquor store. Whisky, wines, vodka, gin, champagne & more delivered same-day across Nairobi. Order via WhatsApp." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/e5319f02-2ae1-4e14-b28c-80408865ca22" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/e5319f02-2ae1-4e14-b28c-80408865ca22" },
     ],
     links: [
       {
