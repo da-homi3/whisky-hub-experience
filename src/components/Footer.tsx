@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Facebook, Instagram, MapPin, MessageCircle, Phone, Twitter } from "lucide-react";
+import { Globe, MapPin, MessageCircle, Phone, Send, Share2 } from "lucide-react";
 
 export function Footer() {
   return (
@@ -23,7 +23,7 @@ export function Footer() {
             Rongai's premium liquor destination. Same-day delivery across Nairobi.
           </p>
           <div className="flex gap-3 mt-5">
-            {[Instagram, Facebook, Twitter].map((Icon, i) => (
+            {[Share2, Globe, Send].map((Icon, i) => (
               <a
                 key={i}
                 href="#"
