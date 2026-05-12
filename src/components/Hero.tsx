@@ -1,11 +1,24 @@
 import { motion } from "framer-motion";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, MessageCircle, Sparkles } from "lucide-react";
-import { useEffect, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
+import { useMounted } from "@/hooks/use-mounted";
 import heroImg from "@/assets/hero-whisky.jpg";
 
 export function Hero() {
   const ref = useRef<HTMLDivElement>(null);
+  const mounted = useMounted();
+  const particles = useMemo(
+    () =>
+      Array.from({ length: 24 }).map(() => ({
+        left: Math.random() * 100,
+        top: Math.random() * 100,
+        dur: 3 + Math.random() * 4,
+        delay: Math.random() * 3,
+      })),
+    [],
+  );
+
 
   useEffect(() => {
     const el = ref.current;
@@ -30,26 +43,17 @@ export function Hero() {
           "radial-gradient(circle 600px at var(--mx, 50%) var(--my, 50%), oklch(0.62 0.18 55 / 0.18), transparent 60%)",
       }}
     >
-      {/* Floating particles */}
-      {Array.from({ length: 30 }).map((_, i) => (
-        <motion.span
-          key={i}
-          className="absolute w-1 h-1 rounded-full bg-[var(--gold)]"
-          style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-          }}
-          animate={{
-            y: [0, -30, 0],
-            opacity: [0.2, 0.9, 0.2],
-          }}
-          transition={{
-            duration: 3 + Math.random() * 4,
-            repeat: Infinity,
-            delay: Math.random() * 3,
-          }}
-        />
-      ))}
+      {/* Floating particles (client-only to avoid SSR hydration mismatch) */}
+      {mounted &&
+        particles.map((p, i) => (
+          <motion.span
+            key={i}
+            className="absolute w-1 h-1 rounded-full bg-[var(--gold)] pointer-events-none"
+            style={{ left: `${p.left}%`, top: `${p.top}%` }}
+            animate={{ y: [0, -30, 0], opacity: [0.2, 0.9, 0.2] }}
+            transition={{ duration: p.dur, repeat: Infinity, delay: p.delay }}
+          />
+        ))}
 
       <div className="container mx-auto px-4 lg:px-8 grid lg:grid-cols-2 gap-12 items-center relative z-10">
         <div className="space-y-7">
